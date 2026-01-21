@@ -1,0 +1,24 @@
+name: Different Events 
+
+on:
+  push:
+    branches:
+      - 'examples/*'
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+    paths:
+      - 'gha-again/filters/*md'
+      - '!gha-again/filters/*txt'
+    
+  schedule:
+    - cron: '10 18 * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Check Events"
+        run: echo "This job will check events."
