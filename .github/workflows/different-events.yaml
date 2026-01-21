@@ -14,7 +14,7 @@ on:
       - "!gha-again/filters/*.txt"
 
   schedule:
-    - cron: "20 13 * * *"
+    - cron: "35 13 * * *"
 
 jobs:
   test:
