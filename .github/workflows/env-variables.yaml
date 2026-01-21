@@ -3,17 +3,17 @@ name: Environment Variables
 on: push
 
 env:
-  $WORKFLOW_ENV: 'Workflow Environment Variable'
+  WORKFLOW_ENV: 'Workflow Environment Variable'
   
 jobs:
   job1:
     env:
-      $JOB_ENV: 'Job Environment Variable'
+      JOB_ENV: 'Job Environment Variable'
     runs-on: ubuntu-latest
     steps:
       - name: "First Job"
         env:
-          $STEP_ENV: 'Step Environment Variable'
+          STEP_ENV: 'Step Environment Variable'
         run: |
           echo "This is the $STEP_ENV"
           echo "This is the $JOB_ENV"
