@@ -10,8 +10,8 @@ on:
       - reopened
       - synchronize
     paths:
-      - "gha-again/filters/*.md"
-      - "!gha-again/filters/*.txt"
+      - "filters/*.md"
+      - "!filters/*.txt"
 
   schedule:
     - cron: "20 13 * * *"
