@@ -1,9 +1,9 @@
 name: Different Events
 
 on:
-  # push:
-  #   branches:
-  #     - 'examples/*'
+  push:
+    branches:
+      - "examples/*"
   pull_request:
     types:
       - opened
