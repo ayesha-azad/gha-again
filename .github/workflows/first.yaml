@@ -1,0 +1,26 @@
+name: First File of Another Revision
+
+on: push
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "First Job"
+        run: echo "This is a shell script."
+
+  second:
+    runs-on: ubunutu-latest
+    steps:
+      - name: "Second Job"
+        run: print("Jobs by Ayesha Azad")
+        shell: python
+
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Greet Someone"
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: "Ayesha Azad"
+      
