@@ -10,11 +10,11 @@ jobs:
         run: echo "This is a shell script."
 
   second:
-    runs-on: ubunutu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: "Second Job"
         run: print("Jobs by Ayesha Azad")
-        shell: python3
+        shell: python
 
   greet:
     runs-on: ubuntu-latest
@@ -24,4 +24,5 @@ jobs:
         with:
           who-to-greet: "Ayesha Azad"
       
+
 
