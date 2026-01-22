@@ -1,0 +1,27 @@
+name: Different Runners
+
+on: push
+
+jobs:
+# Github Runners
+  ubuntu-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Ubuntu Runners"
+        run: echo "This is being run on Linux Ubuntu."
+        
+  mac-runner:
+    runs-on: macos-latest
+    steps:
+      - name: "Mac Runner"
+        run: echo "This is being run on latest MacOS."
+        
+  windows-runner:
+    runs-on: windows-latest
+    steps:
+      - name: "Windows Runners"
+        run: echo "This is being run on Windows OS."
+
+# Third Party Runners
+
+# Self-hosted Runners 
