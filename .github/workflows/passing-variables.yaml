@@ -18,7 +18,7 @@ jobs:
       - name: "Checking Variables"
         run: |
           echo "Value of foo is " ${{ steps.producer1.outputs.foo }}
-          echo "Value of FOO is " $FOO
+          echo "Value of FOO is $FOO"
       
   consumer:
     runs-on: ubuntu-latest 
