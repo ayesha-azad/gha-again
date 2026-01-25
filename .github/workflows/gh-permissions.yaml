@@ -13,8 +13,12 @@ jobs:
       - name: Download GitHub CLI 
         run: sudo apt-get update && sudo apt-get install gh -y 
       - name: List PRs 
+        env:
+          GITHUB_TOKEN: ${{github.token}}
         run: gh pr list --limit 5 
       - name: Change Label 
+        env:
+          GITHUB_TOKEN: ${{github.token}}
         run: gh pr edit 1 --add-label "documentation"
       - name: Check Permissions
         if: failure()
@@ -30,8 +34,12 @@ jobs:
       - name: Download GitHub CLI 
         run: sudo apt-get update && sudo apt-get install gh -y 
       - name: List PRs 
+        env:
+          GITHUB_TOKEN: ${{github.token}}
         run: gh pr list --limit 5 
       - name: Change Label 
+        env:
+          GITHUB_TOKEN: ${{github.token}}
         run: gh pr edit 1 --add-label "documentation"
       - name: Check Permissions
         if: failure()
