@@ -1,0 +1,38 @@
+name: GitHub Permissions 
+
+on: push 
+
+jobs:
+  read-only-prs:
+    runs-on: ubuntu-latest 
+    permissions:
+      pull-requests: read 
+    steps:
+      - name: Check code 
+        uses: actions/checkout@v4 
+      - name: Download GitHub CLI 
+        run: sudo apt-get update && sudo apt-get install gh -y 
+      - name: List PRs 
+        run: gh pr list --limit 5 
+      - name: Change Label 
+        run: gh pr edit 1 --add-label "documentation"
+      - name: Check Permissions
+        if: failure()
+        run: echo "This code does not have write permission"
+
+  write-only-prs:
+    runs-on: ubuntu-latest 
+    permissions:
+      pull-requests: write 
+    steps:
+      - name: Check code 
+        uses: actions/checkout@v4 
+      - name: Download GitHub CLI 
+        run: sudo apt-get update && sudo apt-get install gh -y 
+      - name: List PRs 
+        run: gh pr list --limit 5 
+      - name: Change Label 
+        run: gh pr edit 1 --add-label "documentation"
+      - name: Check Permissions
+        if: failure()
+        run: echo "This code does not have write permission"
