@@ -14,14 +14,14 @@ jobs:
           key: demo-cache-v1 
 
       - name: Populate Folder 
-        if: steps.demo-cache.outputs.cache-hit != true 
+        if: steps.demo-cache.outputs.cache-hit != 'true'
         run: | 
           echo "Populating folder for caching data."
           mkdir -p demo-cache
           date > demo-cache/timestamp.txt
 
       - name: Save Cache 
-        if: steps.demo-cache.outputs.cache-hit != true 
+        if: steps.demo-cache.outputs.cache-hit != 'true' 
         uses: actions/cache@v4
         with:
           path: demo-cache
