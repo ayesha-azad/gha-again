@@ -1,0 +1,33 @@
+name: Cache Testing 
+
+on: push
+
+jobs:
+  cache-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Restore Cache 
+        id: demo-cache 
+        uses: actions/cache@v4
+        with:
+          path: demo-cache
+          key: demo-cache-v1 
+
+      - name: Populate Folder 
+        if: steps.demo-cache.outputs.cache-hit != true 
+        run: | 
+          echo "Populating folder for caching data."
+          mkdir -p demo-cache
+          date > demo-cache/timestamp.txt
+
+      - name: Save Cache 
+        if: steps.demo-cache.outputs.cache-hit != true 
+        uses: actions/cache@v4
+        with:
+          path: demo-cache
+          key: demo-cache-v1 
+
+      - name: Verify Cache 
+        run: |
+          echo "cache-hit ? -> ${{ steps.demo-cache.outputs.cache-hit }}"
+          cat demo-cache/timestamp.txt
