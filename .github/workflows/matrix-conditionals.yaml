@@ -1,0 +1,34 @@
+name: Matrix and Conditionals 
+
+on: push 
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true 
+
+jobs:
+  matrix-mode:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      fail-fast: true 
+      matrix: 
+        number: [1, 2]
+        letter: [a, b, c]
+        exclude: 
+          - number: 1
+            letter: c 
+    steps:
+      - name: Print Every Combination 
+        run: echo "${{matrix.number}}, ${{matrix.letter}}"
+
+      - name: Print Everthing Except 2c 
+        if: ${{ ! (matrix.number == '2' && matrix.letter == 'c' ) }}
+        run: echo "This step runs everthing except 2c."
+  
+  sleep-mode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sleep Time 
+        run: sleep 100
+        timeout-minutes: 2
