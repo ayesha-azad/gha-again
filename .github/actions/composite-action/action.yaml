@@ -16,4 +16,6 @@ runs:
     - name: Greetings
       run: echo "${{inputs.greetings}}"
     - name: Random Number 
+      id: gen-random-num
       run: echo "$RANDOM" >> $GITHUB_OUTPUT
+
