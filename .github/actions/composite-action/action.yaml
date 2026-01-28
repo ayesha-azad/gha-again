@@ -15,7 +15,10 @@ runs:
   steps:
     - name: Greetings
       run: echo "${{inputs.greetings}}"
+      shell: bash
     - name: Random Number 
       id: gen-random-num
       run: echo "$RANDOM" >> $GITHUB_OUTPUT
+      shell: bash 
+
 
