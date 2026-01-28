@@ -1,0 +1,19 @@
+name: Composite Action 
+
+inputs:
+  greetings: 
+    description: "Who to greet?"
+    default: "Ayesha"
+    required: true
+
+outputs:
+  random-number:
+    value: ${{steps.gen-random-num.outputs.random-number}}
+
+runs:
+  using: composite
+  steps:
+    - name: Greetings
+      run: echo "${{inputs.greetings}}"
+    - name: Random Number 
+      run: echo "$RANDOM" >> $GITHUB_OUTPUT
