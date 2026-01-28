@@ -6,11 +6,12 @@ jobs:
   hello-ayesha:
     runs-on: ubuntu-latest
     steps:
+      - name: Check Code 
+        uses: actions/checkout@v4
       - name: Greetings
-        uses: ./actions/composite-action
+        uses: ./.github/actions/composite-action
         with:
           greetings: "Ayesha Azad"
       - name: Random Number Generated
         id: composite-num-gen
-        uses: ./actions/composite-action
-        
+        uses: ./.github/actions/composite-action
