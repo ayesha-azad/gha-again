@@ -1,16 +1,16 @@
-name: Reusable Workflow 
+name: Reusable Workflows
 
-on: 
+on:
   workflow_call:
-    inputs: 
-      name: 
-        default: "Ayesha"
-        required: true 
+    inputs:
+      name:
+        required: true
+        default: Ayesha
         type: string
 
-jobs:
+jobs: 
   hello-ayesha:
     runs-on: ubuntu-latest
     steps:
-      - name: Greetings
+      - name: "Hello Ayesha"
         run: echo "Hello ${{inputs.name}}"
