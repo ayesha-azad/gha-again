@@ -18,8 +18,11 @@ runs:
       shell: bash
     - name: Random Number 
       id: gen-random-num
-      run: echo "random=$RANDOM" >> $GITHUB_OUTPUT
+      run: |
+        random=$RANDOM
+        echo $random >> $GITHUB_OUTPUT
       shell: bash 
+
 
 
 
