@@ -10,7 +10,7 @@ jobs:
         uses: ./.github/actions/composite-action
         with:
           greetings: "Ayesha Azad"
-      - name: Random Number 
+      - name: Random Number Generated
         id: composite-num-gen
         uses: ./.github/actions/composite-action
         
