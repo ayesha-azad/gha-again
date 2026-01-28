@@ -1,0 +1,16 @@
+name: Checking Composite Actions 
+
+on: push
+
+jobs:
+  hello-ayesha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        uses: ./.github/actions/composite-action
+        with:
+          greetings: "Ayesha Azad"
+      - name: Random Number 
+        id: composite-num-gen
+        uses: ./.github/actions/composite-action
+        
