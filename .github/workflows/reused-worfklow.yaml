@@ -1,9 +1,9 @@
-name: Reused Workflow 
+name: Reused Workflow
 
-on: push 
+on: push
 
-jobs: 
+jobs:
   hello:
     uses: ./.github/workflows/reusable-workflow.yaml
-    with: 
+    with:
       name: "Ayesha Azad"
