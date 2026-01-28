@@ -7,7 +7,7 @@ inputs:
     required: true
 
 outputs:
-  random-number:
+  random:
     value: ${{steps.gen-random-num.outputs.random}}
 
 runs:
@@ -21,6 +21,7 @@ runs:
       run: |
         echo "random=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash 
+
 
 
 
