@@ -7,10 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Greetings
-        uses: ./.github/actions/composite-action
+        uses: ./actions/composite-action
         with:
           greetings: "Ayesha Azad"
       - name: Random Number Generated
         id: composite-num-gen
-        uses: ./.github/actions/composite-action
+        uses: ./actions/composite-action
         
