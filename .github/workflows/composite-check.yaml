@@ -15,3 +15,5 @@ jobs:
       - name: Random Number Generated
         id: composite-num-gen
         uses: ./.github/actions/composite-action
+      - name: Random Number Reading
+        run: echo ${{steps.composite-num-gen.outputs.random-number}}
