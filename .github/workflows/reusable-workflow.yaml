@@ -6,6 +6,7 @@ on:
       name: 
         default: "Ayesha"
         required: true 
+        type: string
 
 jobs:
   hello-ayesha:
