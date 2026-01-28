@@ -1,0 +1,15 @@
+name: Reusable Workflow 
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      name: 
+        default: "Ayesha"
+        required: true 
+
+jobs:
+  hello-ayesha:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greetings
+        run: echo "Hello ${{inputs.name}}"
