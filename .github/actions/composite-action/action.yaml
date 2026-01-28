@@ -19,9 +19,9 @@ runs:
     - name: Random Number 
       id: gen-random-num
       run: |
-        random=$RANDOM
-        echo $random >> $GITHUB_OUTPUT
+        echo random="echo $RANDOM" >> $GITHUB_OUTPUT
       shell: bash 
+
 
 
 
