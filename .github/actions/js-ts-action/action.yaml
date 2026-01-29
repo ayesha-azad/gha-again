@@ -1,0 +1,17 @@
+name: Checking JS TS Action
+author: Ayesha Azad
+description: This is used for testing
+
+inputs:
+  name:
+    description: "Add a name to be greeted."
+    required: true
+    default: "Ayesha"
+
+outputs:
+  greeting:
+    description: "Add a greeting"
+
+runs:
+  using: node20
+  main: dist/index.js
