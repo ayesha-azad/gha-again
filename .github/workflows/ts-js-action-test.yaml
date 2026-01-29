@@ -1,0 +1,12 @@
+name: TS JS Action Test 
+
+on: push
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing JS Action
+        uses: ./.github/actions/js-ts-action
+        with:
+          value: "Ayesha Azad"
